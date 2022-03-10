@@ -5,13 +5,11 @@ public class DictionaryUsingArray {
     Pair arr []  = new Pair [10];
     int size = 0;
     void insert(String key, String value){
-        if(!this.contains(key)){
-            //insertion
+        if(!this.contains(key))
             Pair newPair = new Pair(key, value);
             arr[size] = newPair;
             size++;
         }
-        // else, nothing
     }
 
     void remove(String key){
@@ -22,14 +20,12 @@ public class DictionaryUsingArray {
             }
             size--;
         }
-        // else, nothing
     }
 
     void modify(String key, String value){
         for(int i = 0; i < size ; i++) {
             if (arr[i].key == key)
                 arr[i].value = value;
-            //modify
         }
     }
 
@@ -38,7 +34,6 @@ public class DictionaryUsingArray {
             if (arr[i].key == key){
                 return arr[i].value;
             }
-            //modify
         }
         return "";
     }
@@ -51,12 +46,12 @@ public class DictionaryUsingArray {
     }
     public static void main(String[] args) {
 
-        DictionaryUsingArray aDictionary = new DictionaryUsingArray(); // built-in Java dictionary
+        DictionaryUsingArray aDictionary = new DictionaryUsingArray();
         aDictionary.insert("1234", "nabil");
-        aDictionary.insert("5678", "renz"); // size should be two
+        aDictionary.insert("5678", "abc");
         aDictionary.remove("1234");
-        aDictionary.modify("5678", "renzo");
-        System.out.println(aDictionary.lookup("5678")); //renzo
+        aDictionary.modify("5678", "mel");
+        System.out.println(aDictionary.lookup("5678"));
 
     }
 }
